@@ -15,7 +15,7 @@ An app that allows users to input an ingredient and receive a list of up to 10 c
 
 ## Screenshots
 
-![Wireframe](wireframe.png)
+<img src="images/wireframe.png" alt="Wireframe image" width="300">
 
 ## Getting Started
 
