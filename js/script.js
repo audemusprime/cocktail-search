@@ -61,3 +61,10 @@ function getData(evt) {
 		},
 	);
 }
+
+// Makes input field fit placeholder, centers text
+
+$('input[placeholder]').each(function () {
+	$(this).attr('size', $(this).attr('placeholder').length);
+	$(this).css('textAlign', 'center');
+});
