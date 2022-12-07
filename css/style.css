@@ -52,11 +52,11 @@ h1 {
 #directions {
 	display: none;
 	flex-direction: column;
+	margin-left: 25px;
 }
 
 #list {
 	display: none;
-	margin-right: 25px;
 	padding: 20px;
 	width: 300px;
 	border-radius: 10px;
