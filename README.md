@@ -1,4 +1,4 @@
-com# Drink of Choice
+# Drink of Choice
 
 ## Description
 
