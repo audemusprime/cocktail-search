@@ -22,6 +22,7 @@ $input.on('submit', getData);
 function getData(evt) {
 	evt.preventDefault();
 	$list.html('');
+	$drinkInfo.css('display', 'none');
 	$list.css('display', 'block');
 	const search = $ingredient.val();
 	console.log(search);
