@@ -137,3 +137,16 @@ div#field {
 	display: grid;
 	justify-items: center;
 }
+
+span {
+	font-family: 'Architects Daughter', cursive;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(123, 125, 125);
+}
+
+span.error {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 17px;
+	color: rgb(0, 110, 99);
+}

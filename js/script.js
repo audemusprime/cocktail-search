@@ -41,29 +41,34 @@ function getData(evt) {
 	}).then(
 		function (list) {
 			console.log(list);
-			for (const cocktail of list) {
-				let item = cocktail.name;
-				let itemArr = item.split(' ');
-				for (let i = 0; i < itemArr.length; i++) {
-					itemArr[i] = itemArr[i].charAt(0).toUpperCase() + itemArr[i].slice(1);
-					if (itemArr[i].charAt(0) === '(') {
-						itemArr[i] = '(' + itemArr[i].charAt(1).toUpperCase() + itemArr[i].slice(2);
-					}
-				}
-				let item2 = itemArr.join(' ');
-				let menu = cocktail.ingredients;
-				let steps = cocktail.instructions;
-				let $newItem = $(
-					`<li><input type="radio" name="drinks" id="${item2}" value="${item2}" data-drink="${item2}" data-menu="${menu}" data-steps="${steps}"><label for="${item2}">${item2}</label></li>`,
+			if (list.length === 0) {
+				console.log('oh no');
+				$list.append(
+					`<span class="error">Wow! You must be an expert mixologist - we can't find any cocktails with those ingredients. Maybe try a different set?</span>`,
 				);
-				$list.append($newItem);
+			} else {
+				for (const cocktail of list) {
+					let item = cocktail.name;
+					let itemArr = item.split(' ');
+					for (let i = 0; i < itemArr.length; i++) {
+						itemArr[i] = itemArr[i].charAt(0).toUpperCase() + itemArr[i].slice(1);
+						if (itemArr[i].charAt(0) === '(') {
+							itemArr[i] = '(' + itemArr[i].charAt(1).toUpperCase() + itemArr[i].slice(2);
+						}
+					}
+					let item2 = itemArr.join(' ');
+					let menu = cocktail.ingredients;
+					let steps = cocktail.instructions;
+					let $newItem = $(
+						`<li><input type="radio" name="drinks" id="${item2}" value="${item2}" data-drink="${item2}" data-menu="${menu}" data-steps="${steps}"><label for="${item2}">${item2}</label></li>`,
+					);
+					$list.append($newItem);
+				}
 			}
-			// $input.on('submit', function () {
-			// 	$('.second').reset();
-			// });
 		},
 		(error) => {
 			console.log(error);
+			$list.append(`<span class="error">Oh no, something went wrong! Please try again, we know you're thirsty.</span>`);
 		},
 	);
 }
