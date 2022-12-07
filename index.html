@@ -4,34 +4,43 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="css/style.css" />
+		<title>Drink of Choice - What're We Sipping On Tonight?</title>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 		<script defer src="js/script.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oxygen&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<h1>Drink of Choice</h1>
-			<section id="description">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nihil numquam, facere nostrum sequi iste
-				voluptatibus adipisci molestiae dicta, quos, expedita debitis cupiditate repellendus tempora esse! Neque debitis
-				asperiores deserunt.
-			</section>
 		</header>
-		<main>
-			<br />
-			<section id="first">
+		<div class="first">
+			We've all been there: you're finally back home, or maybe you're hosting some friends. Your bar cart is full, with your
+			tried and true favorites sitting front and center. Yet, you're craving something <em>new</em>. Or maybe you've decided
+			to try your hand at being a mixologist? Either way, you don't know what to make! That's where
+			<strong>Drink of Choice</strong> comes in - throw in an ingredient (or two, or three) that you'd like in your
+			drink, and we'll give you up to 10 cocktails you can make. It's almost as easy as hitting the Staples<sup>&reg;</sup> button. Cheers!
+			<div id="field">
+				<p>
 				<form>
-					<input id="search" type="text" placeholder="Ingredients - Alcohol, Mixer, or Garnish" />
+					<input id="search" type="text" placeholder="Ingredients - gin, tonic, lime" />
 					<input id="button" type="submit" value="Let's Get Drinks!" />
 				</form>
-			</section>
-			<br />
-			<section>
-				Cocktail list and instructions will go here
-				<div id="list">TEST</div>
-				<div id="instructions">TEST</div>
-			</section>
-		</main>
+				</p>
+				<span>Note: 1cl = 10ml</span>
+			</div>
+		</div>
+		<div class="second">
+			<div id="list"></div>
+			<div id="directions">
+			<div id="parts"></div>
+			<div id="instructions">
+				<!-- ADD NOTE ABOUT 1cl = 10ml -->
+			</div>
+			</div>
+		</div>
+		<footer>Copyright &copy; All Rights Reserved 2022 Drink of Choice. Background Image by Freepik.</footer>
 	</body>
 </html>
