@@ -11,6 +11,7 @@ const $ingredient = $('input[type="text"]');
 const $list = $('#list');
 const $instructions = $('#instructions');
 const $parts = $('#parts');
+const $drinkInfo = $('#directions');
 
 // EVENT LISTENERS
 
@@ -20,6 +21,8 @@ $input.on('submit', getData);
 
 function getData(evt) {
 	evt.preventDefault();
+	$list.html('');
+	$list.css('display', 'block');
 	const search = $ingredient.val();
 	console.log(search);
 	if (search === '') return;
@@ -37,8 +40,6 @@ function getData(evt) {
 	}).then(
 		function (list) {
 			console.log(list);
-			$list.html('<ul></ul>');
-			$parts.html('<ul></ul>');
 			for (const cocktail of list) {
 				let item = cocktail.name;
 				let itemArr = item.split(' ');
@@ -49,12 +50,16 @@ function getData(evt) {
 					}
 				}
 				let item2 = itemArr.join(' ');
-				$list.append(`<li>${item2}</li>`);
-				let steps = cocktail.instructions;
 				let menu = cocktail.ingredients;
-				$parts.append(`<li>${menu}</li>`);
-				$instructions.append(`${steps}<br>`);
+				let steps = cocktail.instructions;
+				let $newItem = $(
+					`<li><input type="radio" name="drinks" id="${item2}" value="${item2}" data-drink="${item2}" data-menu="${menu}" data-steps="${steps}"><label for="${item2}">${item2}</label></li>`,
+				);
+				$list.append($newItem);
 			}
+			// $input.on('submit', function () {
+			// 	$('.second').reset();
+			// });
 		},
 		(error) => {
 			console.log(error);
@@ -68,3 +73,12 @@ $('input[placeholder]').each(function () {
 	$(this).attr('size', $(this).attr('placeholder').length);
 	$(this).css('textAlign', 'center');
 });
+
+$list.on('click', 'input', getInfo);
+
+function getInfo() {
+	console.log($(this).data('steps').split(',').join('\n'));
+	$drinkInfo.css('display', 'flex');
+	$parts.html($(this).data('menu').split(',').join('<br>'));
+	$instructions.html($(this).data('steps').split('.').join('<br>'));
+}

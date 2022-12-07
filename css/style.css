@@ -30,9 +30,10 @@ h1 {
 	align-self: center;
 	justify-self: center;
 	text-align: center;
-	background-color: rgba(245, 242, 243, 0.56);
+	background-color: rgba(245, 242, 243, 0.5);
 	backdrop-filter: blur(6px);
-	padding: 10px;
+	padding: 15px;
+	border-radius: 10px;
 }
 
 .second {
@@ -40,20 +41,79 @@ h1 {
 	grid-column: 2 / 5;
 	grid-row: 3 / 4;
 	display: flex;
-	height: 500px;
-	margin-top: 30px;
+	height: 400px;
+	margin-top: 15px;
 	overflow-y: auto;
 	justify-items: center;
-	background-color: white;
+	justify-content: space-between;
+	align-content: stretch;
+}
+
+#directions {
+	display: none;
+	flex-direction: column;
+}
+
+#list {
+	display: none;
+	margin-right: 25px;
+	padding: 20px;
+	width: 300px;
+	border-radius: 10px;
+	background-color: rgba(245, 242, 243, 0.5);
+	backdrop-filter: blur(6px);
+	flex: 0 1 auto;
+}
+
+#list li {
+	list-style-type: none;
+	/* list-style-position: inside; */
+	margin-left: 10px;
+	line-height: 35px;
+}
+
+#list input {
+	visibility: hidden;
+}
+
+#list label:hover {
+	color: rgb(255, 151, 158);
+}
+
+#list input:checked + label {
+	color: rgb(0, 110, 99);
+}
+
+#parts {
+	flex-direction: column;
+	flex: 0 1 auto;
+	padding: 20px;
+	margin-bottom: 10px;
+	background-color: rgba(245, 242, 243, 0.5);
+	backdrop-filter: blur(6px);
+	border-radius: 10px;
+	text-align: end;
+}
+
+#instructions {
+	flex-direction: column;
+	flex: 2 0 auto;
+	overflow: auto;
+	padding: 20px;
+	background-color: rgba(245, 242, 243, 0.5);
+	backdrop-filter: blur(6px);
+	border-radius: 10px;
 }
 
 footer {
 	grid-area: footer;
 	grid-row: 4 / 5;
-	align-self: center;
+	align-self: flex-end;
+	justify-self: center;
+	margin-top: 40px;
 }
 
-input {
+#field input {
 	height: 50px;
 	border-radius: 10px;
 	border: solid 2px rgb(28, 28, 28);
@@ -67,7 +127,7 @@ input[type='submit'] {
 	height: 56px;
 	background-color: rgb(255, 151, 158);
 	color: white;
-	font-weight: bold;
+	font-weight: 545;
 }
 
 div#field {
