@@ -11,7 +11,7 @@ An app that allows users to input an ingredient and receive a list of up to 10 c
 - Javascript/jQuery
 - Cocktail API from API Ninjas
 - Git/Github
-- (Hosting location)
+- Github Pages
 
 ## Screenshots
 
