@@ -28,3 +28,5 @@ An app that allows users to input an ingredient and receive a list of up to 10 c
 ## Future Enhancements
 
 - Allow users to save favorite cocktails from their search
+- Toggle to change measurements between ml/oz
+- Ability to choose cocktail complexity
